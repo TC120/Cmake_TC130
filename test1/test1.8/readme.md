@@ -1,1 +1,1 @@
-this project is used to test the messesge function 
+this project is used to test the message function 
