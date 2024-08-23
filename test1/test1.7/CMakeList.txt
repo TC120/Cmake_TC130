@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 3.22)
+
+project(val_test)
+
+
+# 声明包含的*.c和*.h文件
+set(HOME /mnt/c/Users/congh2/Documents/vscode_workspaces/c_test/test1.7)
+
+file(GLOB SRC ${HOME}/src/*.c)
+include_directories(${HOME}/include)
+
+# 声明可执行程序输出位置
+set(EXECUTABLE_OUTPUT_PATH ${HOME}/output)
+# 指定库路径
+# link_directories(${HOME}/static)
+link_directories(${HOME}/share)
+# 引用静态库，掐头去尾写中间 libxxx.a，要放在生成可执行程序前。
+# link_libraries(val_test)
+
+# 生成可执行程序
+add_executable(arg_test ${SRC})
+
+# 引用动态库，掐头去尾写中间 libxxx.so，要放在生成可执行程序后。
+target_link_libraries(arg_test val_test)
+# target_link_libraries(lol lol_shared)
+
+
+
+
+
+
